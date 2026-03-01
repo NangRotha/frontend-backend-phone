@@ -162,7 +162,7 @@ const Login = () => {
                 <input type="checkbox" className="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50" />
                 <span className="ml-2 text-sm text-gray-600">ចងចាំគណនី</span>
               </label>
-              <a href="#" className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors duration-200">
+              <a href="#!" className="text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors duration-200">
                 ភ្លេចពាក្យសម្ងាត់?
               </a>
             </div>
@@ -187,9 +187,9 @@ const Login = () => {
           {/* Footer */}
           <p className="mt-8 text-center text-xs text-gray-500">
             ដោយការចូលប្រើប្រាស់ អ្នកយល់ព្រមតាម{' '}
-            <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">លក្ខខណ្ឌនៃការប្រើប្រាស់</a> 
+            <a href="#!" className="text-blue-600 hover:text-blue-700 font-medium">លក្ខខណ្ឌនៃការប្រើប្រាស់</a> 
             {' '}និង{' '}
-            <a href="#" className="text-blue-600 hover:text-blue-700 font-medium">គោលការណ៍ឯកជនភាព</a>
+            <a href="#!" className="text-blue-600 hover:text-blue-700 font-medium">គោលការណ៍ឯកជនភាព</a>
           </p>
         </div>
       </div>
