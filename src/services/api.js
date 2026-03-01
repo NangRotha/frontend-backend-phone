@@ -1,7 +1,8 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const API_URL = 'http://localhost:8000';
+// Use environment variables with fallback to localhost for development
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -52,6 +53,15 @@ api.interceptors.response.use(
   }
 );
 
+// Helper function to get full image URL
+export const getImageUrl = (imagePath) => {
+  if (!imagePath) return '';
+  if (imagePath.startsWith('http')) return imagePath;
+  // Remove leading slash if present to avoid double slashes
+  const cleanPath = imagePath.startsWith('/') ? imagePath.slice(1) : imagePath;
+  return `${API_URL}/${cleanPath}`;
+};
+
 // Auth API
 export const authAPI = {
   login: (email, password) => {
@@ -70,7 +80,6 @@ export const authAPI = {
   createAdmin: () => api.post('/auth/create-admin'),
 };
 
-// Products API
 // Products API
 export const productsAPI = {
   getAll: (params) => api.get('/products', { params }),
@@ -126,7 +135,7 @@ export const uploadAPI = {
   
   deleteImage: (imagePath) => api.delete(`/upload/image/${encodeURIComponent(imagePath)}`),
   
-  getImageUrl: (imagePath) => `${API_URL}/${imagePath}`,
+  getImageUrl: (imagePath) => getImageUrl(imagePath),
 };
 
 export default api;
